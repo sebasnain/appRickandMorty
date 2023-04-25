@@ -1,10 +1,12 @@
 .divImput{
-    background-color: rgb(26, 26, 30);
+ 
     padding: 10px;
+    
 }
 
 .input{
-    background-color: #7ffffb;
+    color: antiquewhite;
+    background-color: #213c3b;
     width: 200px;
     height: 25px;
     border: solid 2px #00ff1a;
@@ -17,7 +19,7 @@
 }
 
 .button{
-    background-color: #179c98;
+    background-color: #1ea5a1;
     width: 80px;
     height: 25px;
     border: solid 2px #00ff1a;

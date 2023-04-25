@@ -1,17 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@300;400&display=swap');
 .container{
     display: inline-flex;
-    background-color: aqua;
     margin: 2%;
-    border: solid 2px red;
-    width: 340px;
+    width: 240px;
 
 }
 
 
 .contenedorCard{
     background-color: #171616ea;
-   
+    width: 200px;
     border-radius: 8px;
     padding: 10px;
     margin: 10px;
@@ -46,7 +44,8 @@
 .h2{
     background-color: rgba(36, 54, 54, 0.208);;
     color: antiquewhite;
-    width: 290px;
+    width: 180px;
+    font-size: 0.8rem;
     text-align:justify;
     padding: 2px;
     border-radius: 5px;
@@ -55,6 +54,7 @@
 
 .img{
     border-radius: 5px;
+    width: 200px;
 }
 
 
