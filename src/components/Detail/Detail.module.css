@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Lilita+One&display=swap');
+
+
+.container{
+   margin-top: 60px;
+   width: 100%;
+   display: flex;
+   justify-content:center;
+   background-color: #171616ea;
+   width: 650px;
+   margin-left: auto;
+   margin-right: auto;
+   border-radius: 8px;
+}
+
+.containerDetail{
+    font-family: 'Lilita One', cursive;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items:start;
+    justify-content: center;
+    width: 300px;
+   
+}
+.containerDetail > h1 {
+    background-color: antiquewhite;
+    margin-bottom: 50px;
+}
+
+
+
+.containerImg > h1{
+    color: #171616ea;
+    background-color:  rgba(0,255,26,0.75);
+    padding-left: 5px;
+    padding-right: 20px;
+    position:absolute;
+    margin-top: 358px;
+    border-top-right-radius: 25px;
+    font-family: 'Creepster', cursive;
+   
+}
+
+.containerImg > img {
+    width:  400px;
+    border-radius: 8px;
+}
+
+
+

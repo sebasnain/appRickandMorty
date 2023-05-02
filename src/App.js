@@ -1,48 +1,82 @@
 import './App.css';
-import Cards from './components/Cards.jsx';
+import Form from './components/Form/Form.jsx';
+import Cards from './components/Cards/Cards.jsx';
 import Nav from './components/nav/Nav';
-import { useState } from 'react';
-import axios, { formToJSON } from 'axios';
+import { useState , useEffect} from 'react';
+import axios from 'axios';
 import { Routes, Route } from 'react-router-dom';
 import About from './components/About/About';
-import Detail from './components/Deatil/Deatil';
+import Detail from './components/Detail/Detail';
+import { useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function App() {
+  const [characters, setCharacters] = useState([]);
 
-   const [ characters , setCharacters] = useState([])
-   
+  const location = useLocation();
+  let navigate = useNavigate();
+
+const [access, setAccess] = useState(false);
+const email = 'sebas@gmail.com';
+const password = 'sebas2023';
+
+function login(userData) {
+  if (userData.password === password && userData.userData.email === email ) {
+    console.log(userData.userData.email)
+     setAccess(true);
+     navigate('/home');
+  }
+ 
+}
 
 
-   function onSearch(id) {
-      axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
-         if (data.name) {
-            setCharacters((oldChars) => [...oldChars, data]);
-         } else {
-            window.alert('¡No hay personajes con este ID!');
-         }
-      });
-   }
 
-   function onClose(id){
-      const idNumber = Number(id)
+  function onSearch(id) {
+    axios(`https://rickandmortyapi.com/api/character/${id}`).then(
+      ({ data }) => {
+        if (data.name) {
+          setCharacters((oldChars) => [...oldChars, data]);
+        } else {
+          window.alert("¡No hay personajes con este ID!");
+        }
+      }
+    );
+  }
 
-      const flitrados = characters.filter( character => character.id !== idNumber)
-      setCharacters(flitrados)
-   }
-   
-   return (
-      <div className='App'>
-        <Nav onSearch={onSearch}/>
+  function onClose(id) {
+    const idNumber = Number(id);
+
+    const flitrados = characters.filter(
+      (character) => character.id !== idNumber
+    );
+    setCharacters(flitrados);
+  }
+
+
+
+ useEffect(() => {
+  !access && navigate('/');
+}, [access]);
+
+  return (
+    <div className="App">
+      {location.pathname === "/" ? (
+        null
+      ) : (
+        <Nav onSearch={onSearch} />
+      )}
+
       <Routes>
-         <Route  path='/home'  element={ <Cards  characters={characters} onClose={onClose}/>}/>
-         <Route  path='/about' element={ <About/> }/>
-         <Route  path='/detail/:id' element={ <Detail/> }/>
+        <Route path="/" element={<Form login={login} />} />
+        <Route
+          path="/home"
+          element={<Cards characters={characters} onClose={onClose} />}
+        />
+        <Route path="/about" element={<About />} />
+        <Route path="/detail/:id" element={<Detail />} />
       </Routes>
-       
-     
-         
-      </div>
-   );
+    </div>
+  );
 }
 
 export default App;

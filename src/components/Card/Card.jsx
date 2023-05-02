@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 export default function Card(props) {
 
    return (
+      
       <div className={style.container}>
         <div className={style.contenedorCard}>
            <button className={style.button} onClick={props.onClose}>X</button>

@@ -2,16 +2,18 @@
 width: 100%;
  display: flex ;
  justify-content:end;
- background-color: rgb(26, 26, 30);
+ background-color:#465461;
 }
 
+
 .btn{
-    background-color: #1ea5a1;
+    background-color: #242c3b;
+    color:aliceblue;
     width: 80px;
     height: 25px;
     border: solid 2px #00ff1a;
     border-radius: 5px;
-    margin: auto;
+    margin: 10px
 }
 
 .btn:hover{
