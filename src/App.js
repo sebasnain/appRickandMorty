@@ -10,6 +10,7 @@ import Detail from './components/Detail/Detail';
 import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 
+
 function App() {
   const [characters, setCharacters] = useState([]);
 
@@ -37,8 +38,8 @@ function login(userData) {
         if (data.name) {
           setCharacters((oldChars) => [...oldChars, data]);
         } else {
-          window.alert("¡No hay personajes con este ID!");
-        }
+          alert("ID NO ENCONTRADO");
+      }
       }
     );
   }
@@ -56,7 +57,7 @@ function login(userData) {
 
  useEffect(() => {
   !access && navigate('/');
-}, [access]);
+}, [access ,navigate]);
 
   return (
     <div className="App">
