@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Creepster&family=Lilita+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Creepster&family=Lilita+One&display=swap');
 
 
 .container{
@@ -14,17 +15,20 @@
 }
 
 .containerDetail{
-    font-family: 'Lilita One', cursive;
+    color: rgb(220, 249, 222);
+    font-family: 'Amatic SC', cursive;
     margin-left: 10px;
     display: flex;
     flex-direction: column;
     align-items:start;
     justify-content: center;
+    font-size: larger;
     width: 300px;
+    
    
 }
 .containerDetail > h1 {
-    background-color: antiquewhite;
+    
     margin-bottom: 50px;
 }
 
@@ -32,7 +36,7 @@
 
 .containerImg > h1{
     color: #171616ea;
-    background-color:  rgba(0,255,26,0.75);
+    background-color:  #00ff1abf;
     padding-left: 5px;
     padding-right: 20px;
     position:absolute;
@@ -45,6 +49,9 @@
 .containerImg > img {
     width:  400px;
     border-radius: 8px;
+    -webkit-box-shadow: -125px 0px 134px -64px rgba(0,255,26,1);
+-moz-box-shadow: -125px 0px 134px -64px rgba(0,255,26,1);
+box-shadow: -125px 0px 134px -64px rgba(0,255,26,1);
 }
 
 

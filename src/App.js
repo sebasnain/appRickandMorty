@@ -9,6 +9,7 @@ import About from './components/About/About';
 import Detail from './components/Detail/Detail';
 import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import  Favorites  from './components/Favorites/Favorites.jsx';
 
 
 function App() {
@@ -74,6 +75,7 @@ function login(userData) {
           element={<Cards characters={characters} onClose={onClose} />}
         />
         <Route path="/about" element={<About />} />
+        <Route path='/favorites' element={<Favorites />} />
         <Route path="/detail/:id" element={<Detail />} />
       </Routes>
     </div>

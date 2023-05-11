@@ -9,9 +9,8 @@ export default function Nav(props){
          
          <Link to={'/about'}><button className={style.btn}> About </button></Link>
          <Link to={'/home'}><button className={style.btn}> Home </button>  </Link>
-       
-        
-          <SearchBar onSearch={ onSearch }/>
+         <Link to={'/Favorites'}><button className={style.btn}> Favorites </button>  </Link>
+         <SearchBar onSearch={ onSearch }/>
          </div>
        
     )
