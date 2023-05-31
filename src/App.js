@@ -38,6 +38,7 @@ function login(userData) {
       ({ data }) => {
         if (data.name) {
           setCharacters((oldChars) => [...oldChars, data]);
+          console.log(data)
         } else {
           alert("ID NO ENCONTRADO");
       }

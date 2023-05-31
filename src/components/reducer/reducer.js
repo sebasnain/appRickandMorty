@@ -28,19 +28,22 @@ const rootReducer = (state = initialState, {type , payload}) => {
                myFavorites: filterByGender
             }
         case ORDER:
-            const filterByOrder = [...state.allCharacters].sort((a,b) => {
-           if (a.id > b.id){
-            return payload === "Ascendente" ? 1: -1;
-           } else if (a.id < b.id){
-            return payload === "Descendente" ? 1 : -1;
-           } else { 
-            return 0;
-           }
-            })
-            return{
-              ...state,
-              myFavorites:filterByOrder,
-            }
+           const orderCopy = [...state.myFavorites];
+           const order = orderCopy.sort((a,b)=>{
+                if (payload === 'Ascendente'){
+                    return a.id - b.id;
+                  } else if (payload === 'Descendente') {
+                    return b.id - a.id;
+                  } else {
+                    return 0;
+                  }
+            });
+
+            return {
+                ...state,
+                myFavorites: order
+            } 
+          
         default:
             return {...state}
     }
