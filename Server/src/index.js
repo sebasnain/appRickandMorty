@@ -2,7 +2,11 @@ const express = require('express');
 const server = express();
 const PORT = 3001;
 const router = require('./routes/index')
+const { conn } = require('./DB_connection')
 
+
+conn.sync({force:true}).then(() =>{
+   
 server.use((req, res, next) => {
    res.header('Access-Control-Allow-Origin', '*'); /* dame acceso desde cualquier punto */
    res.header('Access-Control-Allow-Credentials', 'true');
@@ -20,9 +24,15 @@ server.use((req, res, next) => {
 server.use(express.json());  /* Crea un middleware que ejecute a express.json(). */
 server.use('/rickandmorty', router)  /**Crea un middleware que agregue el string "/rickandmorty" antes de cada una de tus rutas. en como esto complementa la ruta si no esta esto la ruta no estaria completa. agrega un path antes de los anteriores */
 
-server.listen(PORT, () => {
-   console.log('Server raised in port: ' + PORT);
-});
+
+
+   server.listen(PORT, () => {
+      console.log('Server raised in port: ' + PORT);
+   });
+   
+})
+
+
 
 
 
